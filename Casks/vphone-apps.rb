@@ -4,7 +4,7 @@ cask "vphone-apps" do
 
   on_macos do
     depends_on arch: :arm64
-    sha256 "90cbf63790b7f511d6c44960fbc9cd527e8846e074d55f20e05dd67d090eeea8"
+    sha256 "9f2de2d92c77ace81dd6c04f1ef3fa606cf6eb9291441358e6d843c70799ebba"
     url "https://github.com/securityvoid/vphone-apps/releases/download/v#{version}/vphone-apps_#{version}_darwin_arm64.tar.gz"
   end
 
