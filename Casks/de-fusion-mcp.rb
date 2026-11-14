@@ -1,24 +1,25 @@
 cask "de-fusion-mcp" do
-  version "0.1.0"
-  sha256 "87711be8481946c6b8a604b8b14c9c5639d7519cdcf51addef681a71cb7b1ce0"
+  version "0.1.1"
+  sha256 "ea369467cf19bee9d20709d81655756fe29eb64066cc755b53e56ad6e2726d67"
 
   url "https://github.com/securityvoid/de-fusion-mcp/releases/download/v#{version}/de-fusion-mcp-#{version}.tar.gz"
   name "De-Fusion MCP"
-  desc "MCP server add-in for Autodesk Fusion"
+  desc "Model Context Protocol (MCP) server add-in for Autodesk Fusion CAD"
   homepage "https://github.com/securityvoid/de-fusion-mcp"
 
   depends_on :macos
   depends_on formula: "python@3.13"
 
-  postflight do
-    system_command "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13",
-                   args:         ["#{staged_path}/de-fusion-mcp-#{version}/install.py"],
-                   must_succeed: true
+  postflight_steps do
+    run "{{HOMEBREW_PREFIX}}/opt/python@3.13/bin/python3.13",
+        args: ["{{staged_path}}/de-fusion-mcp-{{version}}/install.py"],
+        must_succeed: true
   end
 
-  uninstall_preflight do
-    system_command "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13",
-                   args: ["#{staged_path}/de-fusion-mcp-#{version}/install.py", "--uninstall"]
+  uninstall_preflight_steps do
+    run "{{HOMEBREW_PREFIX}}/opt/python@3.13/bin/python3.13",
+        args: ["{{staged_path}}/de-fusion-mcp-{{version}}/install.py", "--uninstall"],
+        must_succeed: false
   end
 
   caveats <<~EOS
