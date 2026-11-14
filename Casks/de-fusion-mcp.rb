@@ -1,6 +1,6 @@
 cask "de-fusion-mcp" do
-  version "0.1.1"
-  sha256 "ea369467cf19bee9d20709d81655756fe29eb64066cc755b53e56ad6e2726d67"
+  version "0.1.2"
+  sha256 "3f23e947375a2ece482552b316753d990c41c4772c3a9e3c0972ea1a99d8c09f"
 
   url "https://github.com/securityvoid/de-fusion-mcp/releases/download/v#{version}/de-fusion-mcp-#{version}.tar.gz"
   name "De-Fusion MCP"
@@ -10,17 +10,16 @@ cask "de-fusion-mcp" do
   depends_on :macos
   depends_on formula: "python@3.13"
 
-  postflight_steps do
-    run "{{HOMEBREW_PREFIX}}/opt/python@3.13/bin/python3.13",
-        args: ["{{staged_path}}/de-fusion-mcp-{{version}}/install.py"],
-        must_succeed: true
-  end
+  installer script: {
+    executable: "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13",
+    args:       ["#{staged_path}/de-fusion-mcp-#{version}/install.py"],
+  }
 
-  uninstall_preflight_steps do
-    run "{{HOMEBREW_PREFIX}}/opt/python@3.13/bin/python3.13",
-        args: ["{{staged_path}}/de-fusion-mcp-{{version}}/install.py", "--uninstall"],
-        must_succeed: false
-  end
+  uninstall script: {
+    executable:   "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13",
+    args:         ["#{staged_path}/de-fusion-mcp-#{version}/install.py", "--uninstall"],
+    must_succeed: false,
+  }
 
   caveats <<~EOS
     In Fusion, open Utilities > Add-Ins and tick "Run on Startup" for De-Fusion (brew cannot tick it).
