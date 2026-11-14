@@ -1,6 +1,6 @@
 cask "de-fusion-mcp" do
-  version "0.1.2"
-  sha256 "3f23e947375a2ece482552b316753d990c41c4772c3a9e3c0972ea1a99d8c09f"
+  version "0.1.3"
+  sha256 "7b93d9973562a9d200afac415e8364831f580308f72f2a14f1296e331d231ca1"
 
   url "https://github.com/securityvoid/de-fusion-mcp/releases/download/v#{version}/de-fusion-mcp-#{version}.tar.gz"
   name "De-Fusion MCP"
@@ -12,7 +12,7 @@ cask "de-fusion-mcp" do
 
   installer script: {
     executable: "#{HOMEBREW_PREFIX}/opt/python@3.13/bin/python3.13",
-    args:       ["#{staged_path}/de-fusion-mcp-#{version}/install.py"],
+    args:       ["#{staged_path}/de-fusion-mcp-#{version}/install.py", "--copy"],
   }
 
   uninstall script: {
