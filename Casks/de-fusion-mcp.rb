@@ -1,6 +1,6 @@
 cask "de-fusion-mcp" do
-  version "0.1.4"
-  sha256 "430963b30da7cf521b758165ada5c7560f44ada04ac9eded8c04058560363bb2"
+  version "0.1.5"
+  sha256 "f5c48519bab2b30d8efa2aba947b87ff465fb7780d035713012159a40b2ed74d"
 
   url "https://github.com/securityvoid/de-fusion-mcp/releases/download/v#{version}/de-fusion-mcp-#{version}.tar.gz"
   name "De-Fusion MCP"
