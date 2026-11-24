@@ -7,13 +7,13 @@ cask "vphone-skills" do
   desc "Agent skills for vphone"
   homepage "https://github.com/securityvoid/vphone-cli"
 
-  depends_on arch: :arm64
-  depends_on macos: :sequoia
-
   livecheck do
     url :url
     strategy :github_latest
   end
+
+  depends_on arch: :arm64
+  depends_on macos: :sequoia
 
   binary "Skills/vphone-guest-control", target: "#{Dir.home}/.claude/skills/vphone-guest-control"
   binary "Skills/vphone-guest-control", target: "#{Dir.home}/.codex/skills/vphone-guest-control"
