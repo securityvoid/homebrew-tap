@@ -1,6 +1,6 @@
 cask "vphone-skills" do
-  version "2.17.1"
-  sha256 "9726426bcf57e8c47fc756ce4d5b194363c85e882897ceba20450979605aea48"
+  version "2.17.2"
+  sha256 "4227953acf640f00726cf13f41225e0d9a0314e263cad552f4d1962630fc19f1"
 
   url "https://github.com/securityvoid/vphone-cli/releases/download/#{version}/vphone-skills-#{version}.zip"
   name "vphone-skills"

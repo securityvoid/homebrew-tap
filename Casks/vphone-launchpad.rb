@@ -1,5 +1,5 @@
 cask "vphone-launchpad" do
-  version "2.17.1"
+  version "2.17.2"
   sha256 "ebe3f61ce34cb74745049556a3a9749cc6cd701783320e07493f7ec652ba53ba"
 
   url "https://github.com/securityvoid/vphone-cli/releases/download/#{version}/vphone-launchpad-#{version}-notarized.zip"
