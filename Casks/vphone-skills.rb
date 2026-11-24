@@ -8,17 +8,17 @@ cask "vphone-skills" do
   homepage "https://github.com/securityvoid/vphone-cli"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   livecheck do
     url :url
     strategy :github_latest
   end
 
-  artifact "Skills/vphone-guest-control", target: "#{Dir.home}/.claude/skills/vphone-guest-control"
-  artifact "Skills/vphone-guest-control", target: "#{Dir.home}/.codex/skills/vphone-guest-control"
-  artifact "Skills/authoring-patch-sets", target: "#{Dir.home}/.claude/skills/authoring-patch-sets"
-  artifact "Skills/authoring-patch-sets", target: "#{Dir.home}/.codex/skills/authoring-patch-sets"
-  artifact "Skills/kernel-analysis-vphone600", target: "#{Dir.home}/.claude/skills/kernel-analysis-vphone600"
-  artifact "Skills/kernel-analysis-vphone600", target: "#{Dir.home}/.codex/skills/kernel-analysis-vphone600"
+  binary "Skills/vphone-guest-control", target: "#{Dir.home}/.claude/skills/vphone-guest-control"
+  binary "Skills/vphone-guest-control", target: "#{Dir.home}/.codex/skills/vphone-guest-control"
+  binary "Skills/authoring-patch-sets", target: "#{Dir.home}/.claude/skills/authoring-patch-sets"
+  binary "Skills/authoring-patch-sets", target: "#{Dir.home}/.codex/skills/authoring-patch-sets"
+  binary "Skills/kernel-analysis-vphone600", target: "#{Dir.home}/.claude/skills/kernel-analysis-vphone600"
+  binary "Skills/kernel-analysis-vphone600", target: "#{Dir.home}/.codex/skills/kernel-analysis-vphone600"
 end

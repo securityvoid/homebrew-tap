@@ -8,7 +8,7 @@ cask "vphone-launchpad" do
   homepage "https://github.com/securityvoid/vphone-cli"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   livecheck do
     url :url
